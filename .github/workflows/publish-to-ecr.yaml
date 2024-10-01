@@ -40,5 +40,6 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
           # Login to DockerHub and push the image
-          echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
+          echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+          docker tag anma061/testern dockern69/dockertestanma
           docker push dockern69/dockertestanma:latest
