@@ -37,9 +37,9 @@ jobs:
       - name: Push to DockerHub
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_SECRET }}
+          DOCKER_SECRET: ${{ secrets.DOCKER_SECRET }}
         run: |
           # Login to DockerHub and push the image
-          echo "${DOCKER_SECRET}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+          echo "${DOCKER_SECRET}" | docker login -u "dockern69" --password-stdin
           docker tag anma061/testern dockern69/dockertestanma
           docker push dockern69/dockertestanma:latest
